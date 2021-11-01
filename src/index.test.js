@@ -73,11 +73,31 @@ const Calculator = require("./calculator");
 
 const mockCalc = new Calculator();
 
-test("addition function", () => {
+test("addition ", () => {
   expect(mockCalc.add(1, 2)).toEqual(3);
 });
 
-// Test: add, sub, mul, div, string arg, div by 0
+test("floating point addition", () => {
+  expect(mockCalc.add(0.1, 0.2)).toBeCloseTo(0.3);
+});
+
+test("subtraction ", () => {
+  expect(mockCalc.subtract(5, 3)).toEqual(2);
+});
+
+test("multiplication ", () => {
+  expect(mockCalc.multiply(2, 3)).toEqual(6);
+});
+
+test("division ", () => {
+  expect(mockCalc.divide(1, 2)).toEqual(0.5);
+});
+
+test("throw error for division by zero", () => {
+  expect(() => {
+    mockCalc.divide(1, 0);
+  }).toThrowError("div by 0 not allowed");
+});
 
 /////////////////////////////////////////////
 
