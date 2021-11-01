@@ -1,18 +1,19 @@
-const caesar = require("./index");
-const reverse = require("./index");
-const capitalize = require("./index");
-const analyze = require("./index");
+const caesar = require("./caesar");
+const reverse = require("./reverse");
+const capitalize = require("./capitalize");
+const analyze = require("./analyze");
+const Calculator = require("./calculator");
 
 // import Calculator from "./index";
 // jest.mock("./index");
 
-// test("capitalize first character of lowercase string", () => {
-//   expect(capitalize("word")).toBe("Word");
-// });
-
 /////////////////////////////////////////
 
 // Testing capitalize function
+
+// test("capitalize first character of lowercase string", () => {
+//   expect(capitalize("word")).toBe("Word");
+// });
 
 // test("capitalize first character of string with random caps", () => {
 //   expect(capitalize("wOrD")).toBe("Word");
@@ -70,11 +71,11 @@ const analyze = require("./index");
 
 // Testing calculator object
 
-// test("addition function", () => {
-//   // const mockCalc = new Calculator();
-//   const mockCalcFunc = Calculator.mock.add;
-//   expect(mockCalcFunc(1, 2)).toBe(3);
-// });
+const mockCalc = new Calculator();
+
+test("addition function", () => {
+  expect(mockCalc.add(1, 2)).toEqual(3);
+});
 
 // Test: add, sub, mul, div, string arg, div by 0
 
@@ -106,20 +107,20 @@ const analyze = require("./index");
 
 // Testing array analysis
 
-test("analyze array of unique numbers", () => {
-  expect(analyze([1, 8, 3, 4, 2, 6])).toEqual({
-    average: 4,
-    min: 1,
-    max: 8,
-    length: 6,
-  });
-});
+// test("analyze array of unique numbers", () => {
+//   expect(analyze([1, 8, 3, 4, 2, 6])).toEqual({
+//     average: 4,
+//     min: 1,
+//     max: 8,
+//     length: 6,
+//   });
+// });
 
-test("analyze array of identical numbers", () => {
-  expect(analyze([2, 2, 2, 2, 2])).toEqual({
-    average: 2,
-    min: 2,
-    max: 2,
-    length: 5,
-  });
-});
+// test("analyze array of identical numbers", () => {
+//   expect(analyze([2, 2, 2, 2, 2])).toEqual({
+//     average: 2,
+//     min: 2,
+//     max: 2,
+//     length: 5,
+//   });
+// });
