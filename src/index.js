@@ -9,4 +9,13 @@ function capitalize(string) {
   }
 }
 
+function reverseString(string) {
+  if (!string) return "";
+  if (typeof string === "number") throw new Error("error");
+  const arr = string.split("");
+  arr.reverse();
+  return arr.join("");
+}
+
 module.exports = capitalize;
+module.exports = reverseString;
