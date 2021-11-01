@@ -1,6 +1,7 @@
 const caesar = require("./index");
 const reverse = require("./index");
 const capitalize = require("./index");
+const analyze = require("./index");
 
 // import Calculator from "./index";
 // jest.mock("./index");
@@ -8,6 +9,10 @@ const capitalize = require("./index");
 // test("capitalize first character of lowercase string", () => {
 //   expect(capitalize("word")).toBe("Word");
 // });
+
+/////////////////////////////////////////
+
+// Testing capitalize function
 
 // test("capitalize first character of string with random caps", () => {
 //   expect(capitalize("wOrD")).toBe("Word");
@@ -39,27 +44,31 @@ const capitalize = require("./index");
 
 //////////////////////////////////////
 
-test("reverse characters in string of letters", () => {
-  expect(reverse("word")).toBe("drow");
-});
+// Testing reverse function
 
-test("reverse characters in string of numbers", () => {
-  expect(reverse("48642")).toBe("24684");
-});
+// test("reverse characters in string of letters", () => {
+//   expect(reverse("word")).toBe("drow");
+// });
 
-test("reverse characters in string of letters and numbers", () => {
-  expect(reverse("n9ne")).toBe("en9n");
-});
+// test("reverse characters in string of numbers", () => {
+//   expect(reverse("48642")).toBe("24684");
+// });
 
-test("return empty string when function called without argument", () => {
-  expect(reverse()).toBe("");
-});
+// test("reverse characters in string of letters and numbers", () => {
+//   expect(reverse("n9ne")).toBe("en9n");
+// });
 
-test("return empty string when function called with number", () => {
-  expect(reverse(31)).toBe("");
-});
+// test("return empty string when function called without argument", () => {
+//   expect(reverse()).toBe("");
+// });
+
+// test("return empty string when function called with number", () => {
+//   expect(reverse(31)).toBe("");
+// });
 
 /////////////////////////////////////////////
+
+// Testing calculator object
 
 // test("addition function", () => {
 //   // const mockCalc = new Calculator();
@@ -70,6 +79,8 @@ test("return empty string when function called with number", () => {
 // Test: add, sub, mul, div, string arg, div by 0
 
 /////////////////////////////////////////////
+
+// Testing caesar cipher
 
 // test("caesar cipher on a string with key of 3", () => {
 //   expect(caesar("abc", 3)).toBe("def");
@@ -90,3 +101,25 @@ test("return empty string when function called with number", () => {
 // test("test passing string with numbers", () => {
 //   expect(caesar("hello9", 5)).toBe("mjqqt9");
 // });
+
+/////////////////////////////////////
+
+// Testing array analysis
+
+test("analyze array of unique numbers", () => {
+  expect(analyze([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
+
+test("analyze array of identical numbers", () => {
+  expect(analyze([2, 2, 2, 2, 2])).toEqual({
+    average: 2,
+    min: 2,
+    max: 2,
+    length: 5,
+  });
+});
